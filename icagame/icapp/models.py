@@ -5,9 +5,9 @@ class Aluno(models.Model):
     matricula = models.CharField(max_length=8)
 
     def __str__(self):
-        return self.
+        return self.nome
 
-    class class Meta:
+    class Meta:
         db_table = ''
         managed = True
         verbose_name_plural = 'Alunos'
@@ -20,7 +20,7 @@ class Turma(models.Model):
 class Filiacao(models.Model):
     aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
     turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
-    data_entrada = models.models.DateField(auto_now=True, auto_now_add=True)
+    data_entrada = models.DateField(auto_now_add=True)
 
 """
 Os models a baixo são relativos ao jogo propriamente dito
